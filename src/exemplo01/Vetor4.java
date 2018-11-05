@@ -6,7 +6,7 @@ public class Vetor4 {
             int auxiliar;
             for(int i=0;i<10;i++){
             vetor[i]=(20-i*2);
-        }
+            }
             System.out.println("Vetor antes da ordenação:");
             for(int i=0;i<10;i++){
                 System.out.println(vetor[i]);
