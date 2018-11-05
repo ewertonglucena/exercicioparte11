@@ -1,10 +1,13 @@
 package exercicioparte11;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 import pendrive.*;
 public class ExercicioParte11 {
 
     public static void main(String[] args) {
    
-        Pendrive pen[] = new Pendrive[2];
+        Pendrive pen[] = new Pendrive[0];
     
         for(int i=0; i <pen.length; i++){
             pen[i] = new Pendrive ();
@@ -18,7 +21,7 @@ public class ExercicioParte11 {
         cabecalho[2] = "Capacidade";
         cabecalho[3] = "Preço";
         
-        String espaco = "  ";
+        String espaco = "   ";
         
         String t = "total";
         String q = "Quantidade";
@@ -31,11 +34,24 @@ public class ExercicioParte11 {
             }
             System.out.print(espaco);
         }
-        
+
+        NumberFormat numberFormat = NumberFormat.getInstance();
+
         
         for(int i = 0; i<pen.length;i++){
-            System.out.print("\n\033[32;1m"+pen[i].getMarca()+espaco+pen[i].getModelo()+espaco+pen[i].getCapacidade()+espaco+pen[i].getPreco());
+            String number = numberFormat.format(pen[i].getPreco());
+            //BigDecimal bigDecimal = BigDecimal.valueOf(number.doubleValue());
+            System.out.print("\n\033[32;1m"+pen[i].getMarca()+espaco+pen[i].getModelo()+espaco+pen[i].getCapacidade()+espaco+number);
         }
+        
+        System.out.print("\n\033[34;1m");
+        for(int i = 0; i<cabecalho.length; i++){
+            for(int j = 0; j<cabecalho[i].length(); j++){
+                System.out.print("-");
+            }
+            System.out.print(espaco);
+        }
+        System.out.println("\n\033[34;1m"+cabecalho[2]+" total: ");
         
     }
     
