@@ -24,8 +24,11 @@ public class ExercicioParte11 {
         String t = "total";
         String q = "Quantidade";
         
-        System.out.println("\033[31;1m"+cabecalho[0]+"\t"+cabecalho[1]+"\t"+cabecalho[2]+"\t"+cabecalho[3]);
-        System.out.print("\033[31;1m");
+        for(int i=0; i<cabecalho.length; i++){
+            System.out.print("\033[31;1m"+cabecalho[i]+"\t");
+        }
+        
+        System.out.print("\n\033[31;1m");
         for(int i = 0; i<cabecalho.length; i++){
             for(int j = 0; j<cabecalho[i].length(); j++){
                 System.out.print("-");
@@ -33,12 +36,17 @@ public class ExercicioParte11 {
             System.out.print("\t");
         }
         
-        DecimalFormat p = new DecimalFormat("#,##0.00");
+        //DecimalFormat p = new DecimalFormat("#,##0.00");
         
         for(int i = 0; i<pen.length;i++){
-
-            System.out.print("\n\033[32;1m"+pen[i].getMarca()+espaco+pen[i].getModelo()+espaco+pen[i].getCapacidade()+espaco+p.format(pen[i].getPreco()));
-        }
+            pen[i].relatorio();   
+            }
+            /*
+            System.out.print("\n\033[32;1m"+pen[i].getMarca()+
+                    pen[i].getModelo()+
+                    pen[i].getCapacidade()+
+                    p.format(pen[i].getPreco()));
+        }*/
         
         System.out.print("\n\033[34;1m");
         for(int i = 0; i<cabecalho.length; i++){

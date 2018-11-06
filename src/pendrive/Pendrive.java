@@ -1,5 +1,6 @@
 package pendrive;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Pendrive {
@@ -58,6 +59,51 @@ public class Pendrive {
         System.out.println("Modelo: "+ modelo);
         System.out.println("Capacidade: "+ capacidade);
         System.out.println("Preço: " + preco);
+    }
+    
+    public void relatorio(){
+        System.out.print("\n\033[32;1m");
+        String marcap = "";
+        if (marca.length()< 5){
+            marcap = marca;
+            for(int i = marcap.length(); i<5; i++)
+            marcap = marcap.concat(" ");
+        }
+        else {
+            marcap = marca;
+        }
+    
+        System.out.printf("%s", marcap.substring(0, 5));
+        System.out.print("\t");
+        String modelop = "";
+        
+        if (modelo.length()< 6){
+            modelop = modelo;
+            for(int i = modelop.length(); i<6; i++)
+            modelop = modelop.concat(" ");
+        }
+        else {
+            modelop = modelo;
+        }
+        
+        System.out.printf("%s", modelop.substring(0, 6));
+        System.out.print("\t");
+        
+        String capacidadep = "";
+        String strCap = Integer.toString(capacidade);
+        if (strCap.length()< 10){
+            capacidadep = strCap;
+            for(int i = capacidadep.length(); i<10; i++)
+            capacidadep = capacidadep.concat(" ");
+        }
+        else {
+            capacidadep = strCap;
+        }
+        
+        System.out.printf("%d", capacidadep.substring(0, 10));
+        System.out.print("\t");
+        DecimalFormat p = new DecimalFormat("#,##0.00");
+        System.out.print(p.format(preco));
     }
     
     public void entradaDados(){
