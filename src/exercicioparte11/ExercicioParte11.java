@@ -1,5 +1,4 @@
 package exercicioparte11;
-import java.text.DecimalFormat;
 import pendrive.*;
 
 public class ExercicioParte11 implements pendrive.FormatacaoTexto{
