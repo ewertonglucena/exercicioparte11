@@ -62,6 +62,7 @@ public class Pendrive implements FormatacaoTexto{
     
     public void relatorio(){
         System.out.print("\n\033[32;1m");
+        
         String marcap = "";
         if (marca.length()< 5){
             marcap = marca;
@@ -71,11 +72,10 @@ public class Pendrive implements FormatacaoTexto{
         else {
             marcap = marca;
         }
-    
         System.out.printf("%s", marcap.substring(0, 5));
         System.out.print(TAB);
-        String modelop = "";
         
+        String modelop = "";
         if (modelo.length()< 6){
             modelop = modelo;
             for(int i = modelop.length(); i<6; i++)
@@ -84,7 +84,6 @@ public class Pendrive implements FormatacaoTexto{
         else {
             modelop = modelo;
         }
-        
         System.out.printf("%s", modelop.substring(0, 6));
         System.out.print(TAB);
         

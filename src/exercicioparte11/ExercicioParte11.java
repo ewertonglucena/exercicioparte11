@@ -11,7 +11,7 @@ public class ExercicioParte11 implements pendrive.FormatacaoTexto{
         for(int i=0; i <pen.length; i++){
             pen[i] = new Pendrive ();
             pen[i].entradaDados();
-        }
+        } //leitura de dados do teclado os 20 pendrives
      
         
         String[] cabecalho = new String[4];
