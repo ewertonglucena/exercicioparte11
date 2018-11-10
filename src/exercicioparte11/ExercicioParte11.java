@@ -6,7 +6,7 @@ public class ExercicioParte11 implements pendrive.FormatacaoTexto{
 
     public static void main(String[] args) {
    
-        Pendrive pen[] = new Pendrive[1];
+        Pendrive pen[] = new Pendrive[20];
     
         for(int i=0; i <pen.length; i++){
             pen[i] = new Pendrive ();
