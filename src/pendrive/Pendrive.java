@@ -3,12 +3,11 @@ package pendrive;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class Pendrive {
+public class Pendrive implements FormatacaoTexto{
     private String marca, modelo;
     private int capacidade;
     private double preco;
     public Pendrive(){}
-    
     
     public Pendrive(String marca,String modelo, int capacidade, double preco){
         setMarca(marca);
@@ -74,7 +73,7 @@ public class Pendrive {
         }
     
         System.out.printf("%s", marcap.substring(0, 5));
-        System.out.print("\t");
+        System.out.print(TAB);
         String modelop = "";
         
         if (modelo.length()< 6){
@@ -87,7 +86,7 @@ public class Pendrive {
         }
         
         System.out.printf("%s", modelop.substring(0, 6));
-        System.out.print("\t");
+        System.out.print(TAB);
         
         String capacidadep = "";
         String strCap = Integer.toString(capacidade);
@@ -100,21 +99,22 @@ public class Pendrive {
             capacidadep = strCap;
         }
         
-        System.out.printf("%d", capacidadep.substring(0, 10));
-        System.out.print("\t");
+        System.out.printf("%s", capacidadep.substring(0, 10));
+        System.out.print(TAB);
+        
         DecimalFormat p = new DecimalFormat("#,##0.00");
         System.out.print(p.format(preco));
     }
     
     public void entradaDados(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Insira a marca: ");
+        System.out.print("Insira a Marca: ");
         setMarca(sc.nextLine());
-        System.out.print("Insira o modelo: ");
+        System.out.print("Insira o Modelo: ");
         setModelo(sc.nextLine());
-        System.out.print("Insira a capacidade: ");
+        System.out.print("Insira a Capacidade (GB): ");
         setCapacidade(Integer.parseInt(sc.nextLine()));
-        System.out.print("Insira o preço: ");
+        System.out.print("Insira o preço: R$");
         setPreco(Double.parseDouble(sc.nextLine()));
     }
     

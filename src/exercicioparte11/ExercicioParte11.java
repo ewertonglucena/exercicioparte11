@@ -1,7 +1,8 @@
 package exercicioparte11;
 import java.text.DecimalFormat;
 import pendrive.*;
-public class ExercicioParte11 {
+
+public class ExercicioParte11 implements pendrive.FormatacaoTexto{
 
     public static void main(String[] args) {
    
@@ -19,13 +20,12 @@ public class ExercicioParte11 {
         cabecalho[2] = "Capacidade";
         cabecalho[3] = "Preço";
         
-        String espaco = "\t";
-        
         String t = "total";
         String q = "Quantidade";
         
+        System.out.println("\n");
         for(int i=0; i<cabecalho.length; i++){
-            System.out.print("\033[31;1m"+cabecalho[i]+"\t");
+            System.out.print("\033[31;1m"+cabecalho[i]+TAB);
         }
         
         System.out.print("\n\033[31;1m");
@@ -33,27 +33,19 @@ public class ExercicioParte11 {
             for(int j = 0; j<cabecalho[i].length(); j++){
                 System.out.print("-");
             }
-            System.out.print("\t");
+            System.out.print(TAB);
         }
         
-        //DecimalFormat p = new DecimalFormat("#,##0.00");
-        
         for(int i = 0; i<pen.length;i++){
-            pen[i].relatorio();   
-            }
-            /*
-            System.out.print("\n\033[32;1m"+pen[i].getMarca()+
-                    pen[i].getModelo()+
-                    pen[i].getCapacidade()+
-                    p.format(pen[i].getPreco()));
-        }*/
+            pen[i].relatorio();
+        }
         
         System.out.print("\n\033[34;1m");
         for(int i = 0; i<cabecalho.length; i++){
             for(int j = 0; j<cabecalho[i].length(); j++){
                 System.out.print("-");
             }
-            System.out.print(espaco);
+            System.out.print(TAB);
         }
         
         int somaCapacidade = 0;
@@ -71,6 +63,7 @@ public class ExercicioParte11 {
         System.out.print("\n\033[34m"+cabecalho[3]+" total: "+precoTotal);
         
         System.out.print("\n\033[34mQuantidade: "+pen.length);
+        System.out.println("\n");
     }
     
 }
