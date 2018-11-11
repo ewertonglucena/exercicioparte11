@@ -19,9 +19,6 @@ public class ExercicioParte11 implements pendrive.FormatacaoTexto{
         cabecalho[2] = "Capacidade";
         cabecalho[3] = "Preço";
         
-        String t = "total";
-        String q = "Quantidade";
-        
         System.out.println("\n");
         for(int i=0; i<cabecalho.length; i++){
             System.out.print("\033[31;1m"+cabecalho[i]+TAB);
